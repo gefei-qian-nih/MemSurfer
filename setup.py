@@ -119,7 +119,7 @@ class CustomBuildExt(build_ext):
 
     def build_extensions(self):
         compiler_name = self.compiler.compiler[0]
-        if not self.compiler._is_gcc(compiler_name):
+        if not self.compiler._is_gcc():
             raise Exception(f'Need a GCC compiler. Found ({compiler_name})')
         super().build_extensions()
 
