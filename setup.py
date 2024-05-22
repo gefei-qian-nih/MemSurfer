@@ -165,7 +165,7 @@ if __name__ == '__main__':
     LIBS_EXT = [os.path.basename(l) for l in LIBS_EXT]
     LIBS_EXT = [os.path.splitext(l)[0] for l in LIBS_EXT]
     LIBS_EXT = [l[3:] for l in LIBS_EXT]
-
+    LIBS_EXT = ['CGAL','gmp']
     # --------------------------------------------------------------------------
     # install pypoisson as an Extension module
     # included the setup functionality of https://github.com/mmolero/pypoisson
