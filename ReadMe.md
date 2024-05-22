@@ -100,6 +100,12 @@ $ export LD_LIBRARY_PATH=$MEM_HOME/external/lib:$MEM_HOME/external/lib64:$LD_LIB
 $ export DYLD_LIBRARY_PATH=$MEM_HOME/external/lib:$MEM_HOME/external/lib64:$DYLD_LIBRARY_PATH
 ```
 
+##### 1c. Eigen, Boost, and CGAL (conda)
+```
+export MEM_HOME=$your_installation_path
+create -p $MEM_HOME cgal=4.13.0 eigen cython swig cmake numpy gcc_linux-64=7 gxx cython libxcrypt scipy
+```
+
 #### 2. MemSurfer
 
 Once the dependencies have been installed, `MemSurfer` can be installed
@@ -118,6 +124,18 @@ paths.
 $ cd $MEM_HOME
 $ CC=`which gcc` CXX=`which g++` LDCXXSHARED="`which g++` -bundle -undefined dynamic_lookup" \
   python setup.py install
+```
+
+##### 2a. MemSurfer installation within preset conda environment
+
+```
+export CPATH=$MEM_HOME/include
+export CGAL_ROOT=$MEM_HOME
+export EIGEN_ROOT=$MEM_HOME
+export BOOST_ROOT=$MEM_HOME
+git clone https://github.com/gefei-qian-nih/MemSurfer.git
+cd MemSurfer
+CC=`which gcc` CXX=`which g++` LDCXXSHARED="`which g++` -bundle -undefined dynamic_lookup"   python -m pip  install .
 ```
 
 ### Trobubleshooting and Known Issues
