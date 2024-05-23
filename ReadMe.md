@@ -133,7 +133,8 @@ export CPATH=$MEM_HOME/include
 export CGAL_ROOT=$MEM_HOME
 export EIGEN_ROOT=$MEM_HOME
 export BOOST_ROOT=$MEM_HOME
-git clone https://github.com/gefei-qian-nih/MemSurfer.git
+conda activate $MEM_HOME
+git clone --recursive https://github.com/gefei-qian-nih/MemSurfer.git
 cd MemSurfer
 CC=`which gcc` CXX=`which g++` LDCXXSHARED="`which g++` -bundle -undefined dynamic_lookup"   python -m pip  install .
 ```
